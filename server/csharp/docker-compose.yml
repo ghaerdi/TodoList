@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  todolistdatabase:
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: todolistdatabase
+    volumes:
+      - todolist-db:/var/lib/postgresql/data
+  todolistserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - todolistdatabase
+
+volumes:
+  todolist-db:

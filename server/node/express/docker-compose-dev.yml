@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: todolistdatabase
+    volumes:
+      - database:/var/lib/postgresql/data
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    volumes:
+      - .:/home/app
+
+volumes:
+  database:

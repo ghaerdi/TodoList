@@ -1,0 +1,80 @@
+{
+  "home": {
+    "method": "GET",
+    "url": "http://localhost:3000/"
+  },
+
+  "register": {
+    "method": "POST",
+    "url": "http://localhost:3000/register/",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "pepe",
+      "email": "pepe@gmail.com",
+      "password": 123456
+    }
+  },
+
+  "login": {
+    "method": "POST",
+    "url": "http://localhost:3000/login/",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "pepe",
+      "password": 123456
+    }
+  },
+
+  "logout": {
+    "method": "GET",
+    "url": "http://localhost:3000/logout/"
+  },
+
+  "task:list": {
+    "method": "GET",
+    "url": "http://localhost:3000/task/list"
+  },
+
+  "task:new": {
+    "method": "POST",
+    "url": "http://localhost:3000/task/",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "title": "test",
+      "description": "A new task"
+    }
+  },
+
+  "task:edit": {
+    "method": "PATCH",
+    "url": "http://localhost:3000/task/1",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "description": "The description has been updated"
+    }
+  },
+
+  "task:check": {
+    "method": "PATCH",
+    "url": "http://localhost:3000/task/1",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "done": true
+    }
+  },
+
+  "task:delete": {
+    "method": "DELETE",
+    "url": "http://localhost:3000/task/1"
+  }
+}

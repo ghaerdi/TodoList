@@ -18,6 +18,4 @@ if (!DATABASE_URI) throw "Need to define DATABASE_URI env";
   await createTables();
   app.listen(PORT);
   console.log(`server on port ${PORT}`);
-
-  console.table({ PORT, SECRET_JWT, DATABASE_URI });
 })();

@@ -13,7 +13,7 @@ export async function allowLoggedUser(
 
   if (!Token.exist(cookies)) {
     return res.status(401).json({
-      error: true,
+      isError: true,
       message: `${token} ${messages.error.required}`,
     });
   }
@@ -22,7 +22,7 @@ export async function allowLoggedUser(
 
   if (payload.error) {
     return res.status(401).json({
-      error: true,
+      isError: true,
       message: `${token} ${messages.error.invalid}`
     });
   }
@@ -31,7 +31,7 @@ export async function allowLoggedUser(
 
   if (!user) {
     return res.status(404).json({
-      error: true,
+      isError: true,
       message: `${token} ${messages.error.invalidUserRelation}`,
     });
   }

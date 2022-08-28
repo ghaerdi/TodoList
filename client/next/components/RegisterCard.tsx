@@ -2,6 +2,7 @@ import type { NextRouter } from "next/router";
 import { FormEvent } from "react";
 import { useRouter } from "next/router";
 import Form, { getFormData } from "./Form";
+import URLText from "./URLText";
 import Button from "./Button";
 import Link from "next/link";
 import Input from "./Input";
@@ -15,9 +16,9 @@ async function register(event: FormEvent<HTMLFormElement>, router: NextRouter) {
       "content-type": "application/json"
     },
     body: JSON.stringify(getFormData(event))
-  })
+  });
 
-  const data = await response.json()
+  const data = await response.json();
 
   if (!data.isError) router.push("login");
 }
@@ -34,7 +35,7 @@ function RegisterCard() {
       <Button type="submit">Register</Button>
 
       <Link href="login">
-        <span className="text-sm hover:cursor-pointer text-center underline text-blue-500">Already have an account?</span>
+        <URLText>Already have an account?</URLText>
       </Link>
     </Form>
   );

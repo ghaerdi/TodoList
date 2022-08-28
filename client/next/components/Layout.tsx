@@ -1,13 +1,7 @@
-interface LayoutProps {
-  children: JSX.Element | JSX.Element[]
-}
+import styled from "styled-components";
 
-function Layout({ children }: LayoutProps) {
-  return (
-    <main className="grid justify-center items-center bg-violet-500 w-screen h-screen">
-      {children}
-    </main>
-  )
-}
+const Layout = styled.main.attrs({
+  className: "grid justify-center items-center bg-violet-500 w-screen h-screen"
+})``;
 
 export default Layout;

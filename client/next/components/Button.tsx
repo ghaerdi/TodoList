@@ -1,10 +1,7 @@
-interface ButtonProps {
-  children: string;
-  type: "submit";
-}
+import styled from "styled-components";
 
-function Button({ type, children }: ButtonProps) {
-  return <button className="my-1 bg-red-300" type={type}>{ children }</button>
-}
+const Button = styled.button.attrs({
+    className: "my-1 bg-red-300"
+})``;
 
 export default Button;

@@ -1,6 +1,9 @@
 Just a to-do list app with JWT auth.
 
 Servers:
-- Node
+- Nodejs
   - [Express](./server/node/express)
 - [Dotnet C#](./server/csharp)
+
+Clients:
+- [Nextjs](./client/next)

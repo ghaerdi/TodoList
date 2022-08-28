@@ -1,6 +1,6 @@
-version: "3.9"
+version: "3.8"
 services:
-  todolistdatabase:
+  database:
     image: postgres
     restart: always
     ports:
@@ -8,17 +8,15 @@ services:
     environment:
       POSTGRES_USER: example
       POSTGRES_PASSWORD: example
-      POSTGRES_DB: todolistdatabase
+      POSTGRES_DB: example
     volumes:
       - todolist-db:/var/lib/postgresql/data
   todolistserver:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "3000:3000"
     depends_on:
-      - todolistdatabase
+      - database
 
 volumes:
   todolist-db:

@@ -70,7 +70,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-string port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
-string url = $"http://localhost:{port}";
+string url = Environment.GetEnvironmentVariable("APP_URL") ?? $"http://0.0.0.0:8080";
 
 app.Run(url);

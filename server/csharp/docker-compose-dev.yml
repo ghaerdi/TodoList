@@ -14,7 +14,9 @@ services:
   todolistserver:
     build: .
     ports:
-      - "8080:3001"
+      - "3001:3001"
+    environment:
+      APP_URL: http://localhost:3001
     depends_on:
       - database
 
